@@ -1,0 +1,191 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f4f4;
+  color: #222;
+}
+
+header {
+  background-color: #1f4f7b;
+  color: #fff;
+  padding: 1rem;
+}
+
+header h1 {
+  margin: 0 0 0.5rem 0;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+nav .nav-link {
+  border: none;
+  padding: 0.4rem 0.8rem;
+  background-color: #ffffff22;
+  color: #fff;
+  cursor: pointer;
+}
+
+nav .nav-link.active {
+  background-color: #fff;
+  color: #1f4f7b;
+  font-weight: bold;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 1rem auto 3rem auto;
+  padding: 0 1rem;
+}
+
+section {
+  display: none;
+}
+
+section.active {
+  display: block;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+/* Cards */
+
+.card {
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.card-full {
+  width: 100%;
+}
+
+.card-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.card-row .card {
+  flex: 1 1 200px;
+}
+
+.card.balance {
+  border-left: 4px solid #2e7d32;
+}
+
+.card.spent {
+  border-left: 4px solid #c62828;
+}
+
+.card.saved {
+  border-left: 4px solid #1565c0;
+}
+
+.card span {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Forms */
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 0.2rem;
+}
+
+input, select, textarea, button {
+  font: inherit;
+}
+
+input, select, textarea {
+  padding: 0.4rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #1f4f7b;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: none;
+  background-color: #1f4f7b;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.btn-delete {
+  background-color: #c62828;
+}
+
+/* Tables */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.5rem;
+}
+
+th, td {
+  padding: 0.4rem;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+thead {
+  background-color: #eeeeee;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+/* Footer */
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #1f4f7b;
+  color: #fff;
+}
+
+/* Responsive */
+
+@media (max-width: 700px) {
+  .card-row {
+    flex-direction: column;
+  }
+
+  nav {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Money Tracker</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>My Money Tracker</h1>
+    <nav>
+      <button class="nav-link active" data-target="dashboard">Dashboard</button>
+      <button class="nav-link" data-target="add-expense">Add Expense</button>
+      <button class="nav-link" data-target="savings-goals">Savings &amp; Goals</button>
+      <button class="nav-link" data-target="reports">Reports</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- Dashboard -->
+    <section id="dashboard" class="active">
+      <h2>Dashboard</h2>
+
+      <form id="total-form" class="card card-full">
+        <label for="total-input">Enter Total Money:</label>
+        <input type="number" id="total-input" min="0" required>
+        <button type="submit">Set Total</button>
+      </form>
+
+      <div class="card-row">
+        <div class="card balance">
+          <h3>Current Balance</h3>
+          <span id="current-balance">₹0</span>
+        </div>
+        <div class="card spent">
+          <h3>Total Spent</h3>
+          <span id="total-spent">₹0</span>
+        </div>
+        <div class="card saved">
+          <h3>Total Saved</h3>
+          <span id="total-saved">₹0</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Add Expense -->
+    <section id="add-expense">
+      <h2>Add Expense</h2>
+
+      <form id="expense-form" class="card card-full">
+        <div class="form-row">
+          <label>Amount:</label>
+          <input type="number" id="expense-amount" min="1" required>
+        </div>
+
+        <div class="form-row">
+          <label>Category:</label>
+          <select id="expense-category" required>
+            <option value="">Select category</option>
+            <option value="travel">Travel</option>
+            <option value="food">Food</option>
+            <option value="internet">Internet</option>
+            <option value="college">College Fees</option>
+            <option value="groceries">Groceries</option>
+            <option value="misc">Miscellaneous</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label>Sub-category:</label>
+          <select id="expense-subcategory">
+            <option value="">None</option>
+            <option value="pocket-food">Pocket Food</option>
+            <option value="fast-food">Fast Food</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label>Date:</label>
+          <input type="date" id="expense-date" required>
+        </div>
+
+        <div class="form-row">
+          <label>Time:</label>
+          <input type="time" id="expense-time" required>
+        </div>
+
+        <div class="form-row">
+          <label>Reason / Note:</label>
+          <textarea id="expense-reason" rows="2"></textarea>
+        </div>
+
+        <button type="submit">Add Expense</button>
+      </form>
+
+      <div class="card card-full">
+        <h3>All Expenses</h3>
+        <table id="expense-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Category</th>
+              <th>Sub-category</th>
+              <th>Amount</th>
+              <th>Reason</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Savings & Goals -->
+    <section id="savings-goals">
+      <h2>Savings &amp; Goals</h2>
+
+      <form id="saving-form" class="card card-full">
+        <div class="form-row">
+          <label>Amount Saved:</label>
+          <input type="number" id="saving-amount" min="1" required>
+        </div>
+
+        <div class="form-row">
+          <label>Month:</label>
+          <input type="month" id="saving-month" required>
+        </div>
+
+        <div class="form-row">
+          <label>Reason / Goal:</label>
+          <input type="text" id="saving-reason" required>
+        </div>
+
+        <button type="submit">Add Saving</button>
+      </form>
+
+      <div class="card card-full">
+        <h3>Saved Amounts</h3>
+        <table id="saving-table">
+          <thead>
+            <tr>
+              <th>Month</th>
+              <th>Amount</th>
+              <th>Reason</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Reports -->
+    <section id="reports">
+      <h2>Reports</h2>
+
+      <div id="filters" class="card card-full">
+        <div class="form-row">
+          <label>Filter by Category:</label>
+          <select id="filter-category">
+            <option value="all">All</option>
+            <option value="travel">Travel</option>
+            <option value="food">Food</option>
+            <option value="internet">Internet</option>
+            <option value="college">College Fees</option>
+            <option value="groceries">Groceries</option>
+            <option value="misc">Miscellaneous</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label>Filter by Month:</label>
+          <input type="month" id="filter-month">
+        </div>
+
+        <button id="apply-filters">Apply Filters</button>
+      </div>
+
+      <div class="card card-full">
+        <p>Total Spent (filtered): <span id="report-spent">₹0</span></p>
+        <table id="report-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Category</th>
+              <th>Sub-category</th>
+              <th>Amount</th>
+              <th>Reason</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Created by Sharma | Web Tech Project</p>
+  </footer>
+</body>
+</html>
